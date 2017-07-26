@@ -1,6 +1,6 @@
 #include "hall-effect-magnetic-sensor.h"
  
-int sensorPin = A5;
+int sensorPin = 10;
 
 Hall_Effect_Magnetic_Sensor hems(sensorPin);
 
