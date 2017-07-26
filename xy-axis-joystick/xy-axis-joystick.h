@@ -2,15 +2,17 @@
 #define _XY_AXIS_JOYSTICK_H_
 
 #include <Arduino.h>
-#include <math.h>
 
-class Temperature_Sensor{
+class XY_Axis_Joystick{
     public:
-        Temperature_Sensor(int pin);
-        int read_raw();
-        double read();
+        XY_Axis_Joystick(int pin_x, int pin_y, int pin_key);
+        int read_x();
+        int read_y();
+        int read_key();
     private:
-        int _pin;
+        int _pin_x;
+        int _pin_y;
+        int _pin_key;
 };
 
 #endif

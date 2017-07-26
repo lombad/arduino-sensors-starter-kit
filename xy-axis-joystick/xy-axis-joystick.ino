@@ -1,14 +1,21 @@
-#include "temperature-sensor.h"
+#include "xy-axis-joystick.h"
  
-int sensorPin = A5; // select the input pin for the potentiometer
+int pin_x = A0;
+int pin_y = A1;
+int pin_key = 3;
 
-Temperature_Sensor temp(sensorPin);
+XY_Axis_Joystick joystick(pin_x, pin_y, pin_key);
 
 void setup() {
  Serial.begin(9600);
 }
  
 void loop() {
- Serial.println(temp.read_raw());
- delay(500);
+ Serial.print("X: ");
+ Serial.print(joystick.read_x());
+ Serial.print(", Y: ");
+ Serial.print(joystick.read_y());
+ Serial.print(", KEY: ");
+ Serial.println(joystick.read_key());
+ delay(1);
 }

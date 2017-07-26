@@ -1,20 +1,22 @@
 #include "xy-axis-joystick.h"
 
-Temperature_Sensor::Temperature_Sensor(int pin){
-	pinMode(pin, INPUT);
-	_pin = pin;
+XY_Axis_Joystick::XY_Axis_Joystick(int pin_x, int pin_y, int pin_key){
+	pinMode(pin_x, INPUT);
+	_pin_x = pin_x;
+	pinMode(pin_y, INPUT);
+	_pin_y = pin_y;
+	pinMode(pin_key, INPUT_PULLUP);
+	_pin_key = pin_key;
 }
 
-int Temperature_Sensor::read_raw(){
-	return analogRead(_pin);
+int XY_Axis_Joystick::read_x(){
+	return analogRead(_pin_x);
 }
 
-double Temperature_Sensor::read(){
-	int readVal = analogRead(_pin);
-	double Temp;
-	Temp = log(10000.0*((1024.0/readVal-1))); 
-	Temp = 1 / (0.001129148 + (0.000234125 + (0.0000000876741 * Temp * Temp ))* Temp );
-	Temp = Temp - 273.15;            // Convert Kelvin to Celcius
-	//Temp = (Temp * 9.0)/ 5.0 + 32.0; // Convert Celcius to Fahrenheit
-	return Temp;
+int XY_Axis_Joystick::read_y(){
+	return analogRead(_pin_y);
+}
+
+int XY_Axis_Joystick::read_key(){
+	return digitalRead(_pin_key);
 }
