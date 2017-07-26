@@ -1,5 +1,5 @@
-#ifndef _ACTIVE_BUZZER_
-#define _ACTIVE_BUZZER_
+#ifndef _ACTIVE_BUZZER_H_
+#define _ACTIVE_BUZZER_H_
 
 #include <Arduino.h>
 

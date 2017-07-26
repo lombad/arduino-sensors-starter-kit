@@ -1,5 +1,5 @@
-#ifndef _TEMPERATURE_SENSOR_H_
-#define _TEMPERATURE_SENSOR_H_
+#ifndef _XY_AXIS_JOYSTICK_H_
+#define _XY_AXIS_JOYSTICK_H_
 
 #include <Arduino.h>
 #include <math.h>

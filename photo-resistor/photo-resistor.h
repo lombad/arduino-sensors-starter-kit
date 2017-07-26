@@ -1,5 +1,5 @@
-#ifndef _PHOTO_RESISTOR_
-#define _PHOTO_RESISTOR_
+#ifndef _PHOTO_RESISTOR_H_
+#define _PHOTO_RESISTOR_H_
 
 #include <Arduino.h>
 
